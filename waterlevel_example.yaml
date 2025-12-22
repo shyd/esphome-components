@@ -24,4 +24,4 @@ external_components:
 sensor:
   - platform: water_level_sensor
     name: "Water Level"
-    update_interval: 1s
+    update_interval: 60s
