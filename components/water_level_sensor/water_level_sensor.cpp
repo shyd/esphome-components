@@ -34,7 +34,7 @@ void WaterLevelSensor::update() {
     return;
   }
 
-  // Small delay between reads as in the original .ino
+  // Small delay between reads as in the Seeed example code
   delay(10);
 
   // --- Read High 12 Section ---
