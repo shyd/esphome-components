@@ -14,7 +14,8 @@ static const char *TAG = "water_level_sensor";
 WaterLevelSensor::WaterLevelSensor() : PollingComponent() {}
 
 void WaterLevelSensor::setup() {
-
+  // Intentionally left empty: I2C setup is handled by the framework and
+  // sensor communication/health is checked in update().
 }
 
 void WaterLevelSensor::dump_config() {
