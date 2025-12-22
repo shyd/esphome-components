@@ -35,7 +35,7 @@ void WaterLevelSensor::update() {
   }
 
   // Small delay between reads as in the Seeed example code
-  delay(10);
+  esphome::delay(10);
 
   // --- Read High 12 Section ---
   // Corresponds to getHigh12SectionValue() in .ino
