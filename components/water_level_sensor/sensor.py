@@ -7,7 +7,7 @@ from esphome.components import i2c
 DEPENDENCIES = ['i2c']
 
 water_level_sensor_ns = cg.esphome_ns.namespace('water_level_sensor')
-WaterLevelSensor = water_level_sensor_ns.class_('WaterLevelSensor', cg.PollingComponent, i2c.I2CDevice)
+WaterLevelSensor = water_level_sensor_ns.class_('WaterLevelSensor', sensor.Sensor, cg.PollingComponent, i2c.I2CDevice)
 
 CONFIG_SCHEMA = (
     sensor.sensor_schema(
