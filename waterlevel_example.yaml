@@ -17,9 +17,9 @@ i2c:
   scan: true
 
 external_components:
-  - source:
-      type: local
-      path: components
+  source:
+    type: git
+    url: https://github.com/shyd/esphome-components
 
 sensor:
   - platform: water_level_sensor
