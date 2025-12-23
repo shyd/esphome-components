@@ -34,6 +34,11 @@ void WaterLevelSensor::update() {
     this->status_set_warning();
     return;
   }
+  // Log all raw values for debugging
+  ESP_LOGD(TAG, "Low Section Raw Values: ");
+  for (int i = 0; i < 8; i++) {
+    ESP_LOGD(TAG, "  Section %d: %d", i, low_data[i]);
+  }
 
   // Small delay between reads as in the Seeed example code
   esphome::delay(10);
@@ -44,6 +49,12 @@ void WaterLevelSensor::update() {
     ESP_LOGW(TAG, "Failed to read from high address 0x%02X", ATTINY1_HIGH_ADDR);
     this->status_set_warning();
     return;
+  }
+
+  // Log all raw values for debugging
+  ESP_LOGD(TAG, "High Section Raw Values: ");
+  for (int i = 0; i < 12; i++) {
+    ESP_LOGD(TAG, "  Section %d: %d", i + 8, high_data[i]);
   }
 
   this->status_clear_warning();
